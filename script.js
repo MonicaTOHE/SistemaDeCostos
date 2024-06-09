@@ -1,9 +1,4 @@
-const productos = [
-  { articulo: "zapatilla nike", precio: 20000, descuento: 10 },
-  { articulo: "polera", precio: 40000, descuento: 0 },
-  { articulo: "short", precio: 34000, descuento: 0 },
-  { articulo: "pantalon", precio: 33000, descuento: 0 },
-];
+const productos = [];
 
 //todo esto es el boton
 const botonAgregar = document.getElementById("botonagregar");
@@ -17,22 +12,23 @@ botonAgregar.addEventListener("click", () => {
   productos.push(obj);
 
   borrarTabla();
-  crearFilas();
+  //crearFila("nombre");
+  llenarTabla();
 });
 
 function borrarTabla() {
   document.getElementById("tablabody").innerHTML = "";
 }
 
-function crearFilas() {
+function crearFila(nombre, precio, descuento) {
   const tr = document.createElement("tr"); //creamos un tr
 
   const td1 = document.createElement("td"); //creeamos primero td que son los que vna dentro de tr
-  td1.innerHTML = "pupo"; //aqui hicimos que el td tuviera un texto
+  td1.innerHTML = nombre; //aqui hicimos que el td tuviera un texto
   const td2 = document.createElement("td");
-  td2.innerHTML = "popo";
+  td2.innerHTML = precio;
   const td3 = document.createElement("td");
-  td3.innerHTML = "pupu";
+  td3.innerHTML = descuento;
 
   tr.appendChild(td1); // hicimos que el tr tenga como hijo el td, asi el td ahora vale lo de arriba
   tr.appendChild(td2);
@@ -46,6 +42,18 @@ function crearFilas() {
   <td>Otto</td>
 </tr>`;
 */
+}
+
+function llenarTabla() {
+  //crearFila(productos[1].articulo, productos[1].precio, productos[1].descuento);
+
+  for (let i = 0; i < productos.length; i++) {
+    crearFila(
+      productos[i].articulo,
+      productos[i].precio,
+      productos[i].descuento
+    );
+  }
 }
 
 //leer articulo y precio y descuento cuando apreten agregar
