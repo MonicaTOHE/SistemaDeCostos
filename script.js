@@ -1,5 +1,9 @@
 const productos = [];
-
+let subtotal = 0;
+let descuento = 0;
+let precioDespuesDeLosDescuentos = 0;
+let total = 0;
+let iva = 0;
 //todo esto es el boton
 const botonAgregar = document.getElementById("botonagregar");
 botonAgregar.addEventListener("click", () => {
@@ -46,6 +50,10 @@ function crearFila(nombre, precio, descuento) {
 
 function llenarTabla() {
   //crearFila(productos[1].articulo, productos[1].precio, productos[1].descuento);
+  subtotal = 0;
+  descuento = 0; //descuento sirve para cada producto
+  precioDespuesDeLosDescuentos = 0;
+  total = 0;
 
   for (let i = 0; i < productos.length; i++) {
     crearFila(
@@ -53,7 +61,41 @@ function llenarTabla() {
       productos[i].precio,
       productos[i].descuento
     );
+    const precioInt = parseInt(productos[i].precio);
+    const descuentoInt = parseInt(productos[i].descuento);
+
+    subtotal += precioInt;
+    reglaDeTres = (descuentoInt * precioInt) / 100; // aqui nos quedara 100
+    descuento += reglaDeTres;
+    precioDespuesDeLosDescuentos += precioInt - reglaDeTres; //aqui quedan 900
   }
+
+  if (productos.length > 9) {
+    diezPorciento = precioDespuesDeLosDescuentos * 0.1;
+    total = precioDespuesDeLosDescuentos - diezPorciento;
+    const MuestraDescuentoPorCantidad =
+      document.getElementById("descuentoCantidad");
+    MuestraDescuentoPorCantidad.innerText = "Aplicado 10%";
+  } else {
+    total = precioDespuesDeLosDescuentos;
+    const MuestraDescuentoPorCantidad =
+      document.getElementById("descuentoCantidad");
+    MuestraDescuentoPorCantidad.innerText = "No aplica 10%";
+  }
+
+  iva = (19 * total) / 100;
+
+  const muestraSubtotal = document.getElementById("subtotal");
+  muestraSubtotal.innerText = subtotal;
+
+  const muestraDescuento = document.getElementById("primerDescuento");
+  muestraDescuento.innerText = descuento;
+
+  const muestraIva = document.getElementById("iva");
+  muestraIva.innerText = iva;
+
+  const muestraTotal = document.getElementById("total");
+  muestraTotal.innerText = total;
 }
 
 //leer articulo y precio y descuento cuando apreten agregar

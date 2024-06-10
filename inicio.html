@@ -41,25 +41,44 @@
         </div>
       </div>
     </div>
-
+    <div style="min-height: 500px">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Articulo</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descuento</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider" id="tablabody"></tbody>
+      </table>
+    </div>
     <table class="table table-bordered">
-      <thead>
+      <tbody class="table-group-divider">
         <tr>
-          <th scope="col">Articulo</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Descuento</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider" id="tablabody">
-        <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>Otto</td>
+          <td class="col-6"></td>
+          <td>Subtotal</td>
+          <td id="subtotal"></td>
         </tr>
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>Otto</td>
+          <td class="col-6"></td>
+          <td>Descuento</td>
+          <td id="primerDescuento"></td>
+        </tr>
+        <tr>
+          <td class="col-6"></td>
+          <td>Descuento por cantidad (10%)</td>
+          <td id="descuentoCantidad"></td>
+        </tr>
+        <tr>
+          <td class="col-6"></td>
+          <td>IVA</td>
+          <td id="iva"></td>
+        </tr>
+        <tr>
+          <td class="col-6"></td>
+          <td><strong>TOTAL</strong></td>
+          <td id="total"></td>
         </tr>
       </tbody>
     </table>
