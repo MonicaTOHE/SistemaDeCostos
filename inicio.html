@@ -11,28 +11,36 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <h1>SISTEMA DE COSTOS</h1>
+  <body class="m-5 text-bg-light p-3">
+    <h1 class="titulo"><strong>SISTEMA DE COSTOS</strong></h1>
 
-    <div class="row g-2">
+    <div class="row g-2 datos">
       <div class="col-md">
         <div class="form-floating">
-          <input type="text" class="form-control" id="articulo" />
-          <label for="articulo">Nombre de articulo</label>
+          <input
+            type="text"
+            class="form-control border-success"
+            id="articulo"
+          />
+          <label for="articulo" class="texto">Nombre de articulo</label>
         </div>
       </div>
       <div class="col-md">
         <div class="form-floating">
-          <input type="text" class="form-control" id="precio" />
-          <label for="precio">Precio</label>
+          <input type="text" class="form-control border-success" id="precio" />
+          <label for="precio" class="texto">Precio</label>
         </div>
       </div>
       <div class="col-md">
         <div class="form-floating input-group">
-          <input type="text" class="form-control" id="descuento" />
-          <label for="descuento">Descuento %</label>
+          <input
+            type="text"
+            class="form-control border-success"
+            id="descuento"
+          />
+          <label for="descuento" class="texto">Descuento %</label>
           <button
-            class="btn btn-outline-secondary"
+            class="btn btn-outline-secondary texto"
             type="button"
             id="botonagregar"
           >
@@ -42,42 +50,45 @@
       </div>
     </div>
     <div style="min-height: 500px">
-      <table class="table table-bordered">
+      <table class="table table-bordered border-success">
         <thead>
           <tr>
-            <th scope="col">Articulo</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Descuento</th>
+            <th scope="col" class="texto">Articulo</th>
+            <th scope="col" class="texto">Precio</th>
+            <th scope="col" class="texto">Descuento</th>
           </tr>
         </thead>
-        <tbody class="table-group-divider" id="tablabody"></tbody>
+        <tbody
+          class="table-group-divider border-success"
+          id="tablabody"
+        ></tbody>
       </table>
     </div>
-    <table class="table table-bordered">
-      <tbody class="table-group-divider">
+    <table class="table table-bordered border-success">
+      <tbody class="table-group-divider border-success">
         <tr>
           <td class="col-6"></td>
-          <td>Subtotal</td>
+          <td class="texto">Subtotal</td>
           <td id="subtotal"></td>
         </tr>
         <tr>
           <td class="col-6"></td>
-          <td>Descuento</td>
+          <td class="texto">Descuento</td>
           <td id="primerDescuento"></td>
         </tr>
         <tr>
           <td class="col-6"></td>
-          <td>Descuento por cantidad (10%)</td>
+          <td class="texto">Descuento por cantidad (10%)</td>
           <td id="descuentoCantidad"></td>
         </tr>
         <tr>
           <td class="col-6"></td>
-          <td>IVA</td>
+          <td class="texto">IVA</td>
           <td id="iva"></td>
         </tr>
         <tr>
           <td class="col-6"></td>
-          <td><strong>TOTAL</strong></td>
+          <td class="texto"><strong>TOTAL</strong></td>
           <td id="total"></td>
         </tr>
       </tbody>
