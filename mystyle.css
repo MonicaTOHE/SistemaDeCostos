@@ -1,0 +1,20 @@
+.titulo {
+
+    text-align: center;
+    margin-top: 20px;;
+    margin-bottom: 20px;
+    font-family: "arial";
+    color: rgb(6, 50, 15);
+}
+
+.datos {
+
+    margin-bottom: 20px;
+}
+
+.texto {
+    
+    color: rgb(6, 50, 15) !important;
+    
+}
+
